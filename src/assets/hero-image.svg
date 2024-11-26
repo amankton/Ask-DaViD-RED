@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Browser Window Frame -->
+  <rect x="100" y="50" width="600" height="500" rx="8" fill="#2A2A2A"/>
+  <rect x="100" y="50" width="600" height="40" rx="8" fill="#1A1A1A"/>
+  
+  <!-- Browser Controls -->
+  <circle cx="130" cy="70" r="6" fill="#FF5F57"/>
+  <circle cx="150" cy="70" r="6" fill="#FEBC2E"/>
+  <circle cx="170" cy="70" r="6" fill="#28C840"/>
+  
+  <!-- URL Bar -->
+  <rect x="200" y="60" width="400" height="20" rx="4" fill="#3A3A3A"/>
+  
+  <!-- Content Area -->
+  <rect x="120" y="110" width="560" height="420" rx="4" fill="#1A1A1A"/>
+  
+  <!-- Ask DaViD Interface -->
+  <rect x="500" y="130" width="160" height="380" rx="8" fill="#B22222" fill-opacity="0.1"/>
+  <rect x="520" y="150" width="120" height="40" rx="4" fill="#B22222"/>
+  <text x="545" y="175" font-family="Arial" font-size="14" fill="white">Ask DaViD</text>
+  
+  <!-- Content Text Lines -->
+  <rect x="140" y="130" width="340" height="12" rx="2" fill="#333333"/>
+  <rect x="140" y="150" width="280" height="12" rx="2" fill="#333333"/>
+  <rect x="140" y="170" width="320" height="12" rx="2" fill="#333333"/>
+  
+  <!-- Highlight Effect -->
+  <rect x="140" y="200" width="300" height="40" rx="4" fill="#B22222" fill-opacity="0.1"/>
+  
+  <!-- Gradient Overlay -->
+  <rect x="100" y="50" width="600" height="500" rx="8" fill="url(#gradient)" fill-opacity="0.1"/>
+  
+  <defs>
+    <linearGradient id="gradient" x1="400" y1="50" x2="400" y2="550" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B22222" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
