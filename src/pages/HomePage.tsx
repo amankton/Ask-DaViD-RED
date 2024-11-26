@@ -37,6 +37,10 @@ const ContentContainer = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 16px;
+  }
 `;
 
 const HeroSection = styled.section`
@@ -54,6 +58,11 @@ const HeroSection = styled.section`
     rgba(10, 10, 10, 1) 100%
   );
   overflow: hidden;
+  padding: 40px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 20px 0;
+  }
 
   &::before {
     content: '';
@@ -73,12 +82,22 @@ const HeroContent = styled.div`
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding: 0 20px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 16px;
+  }
 `;
 
 const TextContainer = styled.div`
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 16px;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -87,8 +106,13 @@ const HeroTitle = styled.h1`
   margin-bottom: 1.5rem;
   color: ${({ theme }) => theme.colors.text};
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 2.5rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -115,13 +139,17 @@ const GradientText = styled.span`
 `;
 
 const HeroSubtitle = styled.p`
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   color: ${({ theme }) => theme.colors.textSecondary};
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1.1rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -150,12 +178,21 @@ const CTAButton = styled(motion.button)`
 `;
 
 const VideoContainer = styled(motion.div)`
-  margin-top: 3rem;
   width: 100%;
   max-width: 800px;
-  border-radius: 20px;
+  margin: 2rem auto;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.shadows.large};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin: 1.5rem auto;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 1rem auto;
+    border-radius: 8px;
+  }
 `;
 
 const StyledVideo = styled.video`
@@ -191,18 +228,33 @@ const FeatureGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 0 1rem;
+  margin: 2rem 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const FeatureCard = styled(motion.div)`
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
+  background: ${({ theme }) => theme.colors.backgroundAlt};
   padding: 2rem;
-  text-align: center;
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: ${({ theme }) => theme.shadows.medium};
+  transition: transform ${({ theme }) => theme.transitions.default};
 
   &:hover {
     transform: translateY(-5px);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 1.5rem;
+    border-radius: 8px;
   }
 `;
 
@@ -239,34 +291,52 @@ const FAQContainer = styled.div`
 `;
 
 const FAQItem = styled(motion.div)`
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 1.5rem;
+  background: ${({ theme }) => theme.colors.backgroundAlt};
+  border-radius: 12px;
   margin-bottom: 1rem;
+  overflow: hidden;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
 `;
 
-const FAQQuestion = styled.h3`
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 1.2rem;
-  margin: 0;
+const FAQQuestion = styled.div`
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 1rem;
+    font-size: 1rem;
+  }
 `;
 
 const FAQAnswer = styled(motion.div)`
+  padding: 0 1.5rem 1.5rem;
   color: ${({ theme }) => theme.colors.textSecondary};
-  margin-top: 1rem;
   line-height: 1.6;
-  font-size: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+  }
 `;
 
 const FooterSection = styled.footer`
   background: ${({ theme }) => theme.colors.backgroundDark};
-  padding: 4rem 0;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  padding: 3rem 0;
+  margin-top: 4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
 `;
 
 const FooterContent = styled.div`
