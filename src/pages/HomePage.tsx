@@ -529,8 +529,8 @@ const HomePage: React.FC = () => {
                   answer: "Ask DaViD uses advanced AI to understand the content of webpages you're viewing. Simply highlight text or ask questions, and DaViD will provide relevant answers and insights based on the page content."
                 },
                 {
-                  question: "Is it free to use?",
-                  answer: "Yes, Ask DaViD is currently free to use! Install it from the Chrome Web Store and start enhancing your research experience today."
+                  question: "What is the subscription cost?",
+                  answer: "Ask DaViD is available for a $5 monthly subscription. This gives you full access to all features and helps us maintain high-quality AI services for our users."
                 },
                 {
                   question: "What about privacy?",
