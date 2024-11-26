@@ -3,7 +3,18 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import promoVideo from '../assets/Ask DaViD Promo Vid24.mp4';
-import davidPromo from '../assets/Ask DaViD Promo Trans.png';
+import davidPromoImg from '../assets/Ask DaViD Promo Trans.png';
+
+// Add type declarations for assets
+declare module '*.mp4' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.png' {
+  const content: string;
+  export default content;
+}
 
 const Container = styled.div`
   width: 100%;
@@ -491,7 +502,7 @@ const ScrollToTopButton = styled(motion.button)`
   }
 `;
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const orbs = [
     { size: 300, top: '10%', left: '5%', delay: 0, duration: 15 },
     { size: 200, top: '60%', left: '15%', delay: 2, duration: 18 },
