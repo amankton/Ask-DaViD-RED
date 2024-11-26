@@ -559,11 +559,23 @@ const HomePage: React.FC = () => {
         <FooterSection>
           <FooterContent>
             <FooterLinks>
-              <FooterLink href="#privacy">Privacy Policy</FooterLink>
-              <FooterLink href="#terms">Terms of Service</FooterLink>
+              <FooterLink 
+                href="https://www.freeprivacypolicy.com/live/2e7bacd9-aeac-4d69-a3ac-b1a773dddbf2" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </FooterLink>
+              <FooterLink 
+                href="https://www.freeprivacypolicy.com/live/2e7bacd9-aeac-4d69-a3ac-b1a773dddbf2" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Terms of Service
+              </FooterLink>
               <FooterLink href="mailto:support@nfluency.com">Contact</FooterLink>
             </FooterLinks>
-            <p> 2024 Ask DaViD. All rights reserved.</p>
+            <p>&copy; 2024 Ask DaViD. All rights reserved.</p>
           </FooterContent>
         </FooterSection>
 
