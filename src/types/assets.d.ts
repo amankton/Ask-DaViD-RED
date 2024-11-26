@@ -1,9 +1,9 @@
 declare module '*.mp4' {
-    const src: string;
-    export default src;
+  const value: any;
+  export = value;
 }
 
 declare module '*.png' {
-    const content: string;
-    export default content;
+  const value: any;
+  export = value;
 }

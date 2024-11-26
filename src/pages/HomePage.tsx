@@ -2,13 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import promoVideo from '../assets/Ask DaViD Promo Vid24.mp4';
-
-// Add type declarations for assets
-declare module '*.mp4' {
-  const src: string;
-  export default src;
-}
+import * as promoVideo from '../assets/Ask DaViD Promo Vid24.mp4';
 
 const Container = styled.div`
   width: 100%;
@@ -183,7 +177,7 @@ const HomePage: React.FC = () => {
                 playsInline
                 controls={false}
               >
-                <source src={promoVideo} type="video/mp4" />
+                <source src={promoVideo.default} type="video/mp4" />
                 Your browser does not support the video tag.
               </StyledVideo>
             </VideoContainer>
