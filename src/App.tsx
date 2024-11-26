@@ -1,47 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './GlobalStyles';
+import theme from './theme';
 import HomePage from './pages/HomePage';
 import TermsOfService from './pages/TermsOfService';
-import theme from './theme';
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: ${({ theme }) => theme.fonts.primary};
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  button {
-    font-family: inherit;
-  }
-`;
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyles />
       <Router basename="/Ask-DaViD-RED">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
       </Router>
     </ThemeProvider>

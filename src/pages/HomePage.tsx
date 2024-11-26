@@ -570,13 +570,7 @@ const HomePage: React.FC = () => {
         <FooterSection>
           <FooterContent>
             <FooterLinks>
-              <ExternalFooterLink 
-                href="https://www.freeprivacypolicy.com/live/2e7bacd9-aeac-4d69-a3ac-b1a773dddbf2" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Privacy Policy
-              </ExternalFooterLink>
+              <FooterLink to="/privacy">Privacy Policy</FooterLink>
               <FooterLink to="/terms">Terms of Service</FooterLink>
               <ExternalFooterLink href="mailto:support@nfluency.com">Contact</ExternalFooterLink>
             </FooterLinks>
