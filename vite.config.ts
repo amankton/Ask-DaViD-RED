@@ -11,6 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        verification: resolve(__dirname, 'googled67e97ffb74a41fc.html')
       },
       output: {
         assetFileNames: (assetInfo) => {
