@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import * as promoVideo from '../assets/Ask DaViD Promos Vid24.mp4';
 import { AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
@@ -282,13 +283,23 @@ const FooterLinks = styled.div`
   flex-wrap: wrap;
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
   color: ${({ theme }) => theme.colors.textSecondary};
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
+  }
+`;
+
+const ExternalFooterLink = styled.a`
+  color: ${({ theme }) => theme.colors.textSecondary};
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
 
@@ -559,21 +570,15 @@ const HomePage: React.FC = () => {
         <FooterSection>
           <FooterContent>
             <FooterLinks>
-              <FooterLink 
+              <ExternalFooterLink 
                 href="https://www.freeprivacypolicy.com/live/2e7bacd9-aeac-4d69-a3ac-b1a773dddbf2" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
                 Privacy Policy
-              </FooterLink>
-              <FooterLink 
-                href="https://www.freeprivacypolicy.com/live/2e7bacd9-aeac-4d69-a3ac-b1a773dddbf2" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Terms of Service
-              </FooterLink>
-              <FooterLink href="mailto:support@nfluency.com">Contact</FooterLink>
+              </ExternalFooterLink>
+              <FooterLink to="/terms">Terms of Service</FooterLink>
+              <ExternalFooterLink href="mailto:support@nfluency.com">Contact</ExternalFooterLink>
             </FooterLinks>
             <p>&copy; 2024 Ask DaViD. All rights reserved.</p>
           </FooterContent>

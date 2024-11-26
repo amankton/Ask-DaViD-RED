@@ -1,5 +1,7 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import HomePage from './pages/HomePage';
+import TermsOfService from './pages/TermsOfService';
 import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
@@ -36,7 +38,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <HomePage />
+      <Router basename="/Ask-DaViD-RED">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/terms" element={<TermsOfService />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
