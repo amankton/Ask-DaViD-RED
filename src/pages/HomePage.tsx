@@ -44,8 +44,26 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 2rem;
-  background: ${({ theme }) => theme.colors.background};
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  background: linear-gradient(to bottom, 
+    rgb(178, 34, 34) 0%,
+    rgba(128, 0, 0, 0.95) 50%,
+    rgba(10, 10, 10, 1) 100%
+  );
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -74,11 +92,25 @@ const HeroTitle = styled.h1`
 `;
 
 const GradientText = styled.span`
-  background: linear-gradient(135deg, #FF4D4D 0%, #F9CB28 100%);
+  background: linear-gradient(
+    to right,
+    #B22222 20%,
+    #FF4444 30%,
+    #B22222 70%,
+    #800000 80%
+  );
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
-  display: inline;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s ease infinite;
+  
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 `;
 
 const HeroSubtitle = styled.p`
@@ -93,7 +125,7 @@ const HeroSubtitle = styled.p`
 `;
 
 const CTAButton = styled(motion.button)`
-  background: linear-gradient(135deg, #FF4D4D 0%, #F9CB28 100%);
+  background: #B22222;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -103,11 +135,12 @@ const CTAButton = styled(motion.button)`
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-
+  box-shadow: 0 4px 15px rgba(178, 34, 34, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
   &:hover {
     transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(178, 34, 34, 0.3);
   }
 
   &:active {
