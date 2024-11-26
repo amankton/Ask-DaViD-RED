@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import * as promoVideo from '../assets/Ask DaViD Promo Vid24.mp4';
+import * as promoVideo from '../assets/Ask DaViD Promos Vid24.mp4';
 import { AnimatePresence } from 'framer-motion';
 
 const Container = styled.div`
